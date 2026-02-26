@@ -11,8 +11,9 @@ let seores = null;
 console.log('slug',slug);
 
 try {
+  
    seores = await fetchSeoBySlug(slug);
-   console.log(seores)
+   console.log('from blade',seores)
    
  } catch (error) {
    console.log("SEO fetch failed", error);
