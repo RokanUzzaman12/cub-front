@@ -1,0 +1,40 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+
+import FunFact from "../../../components/common/FunFact.astro";
+import FacultyBanner from "../../../components/common/FacultyBanner.astro";
+import Faculty from "../../../components/Faculties/Faculty";
+
+import {fetchFaculties} from "../../../api/faculties"
+import { removeDash } from "../../../lib/removeDash";
+export async function getStaticPaths() {
+  const faculties = await fetchFaculties();
+  return faculties.data.map((faculty: { slug: string; }) => ({
+    params: { id: faculty.slug },
+  }));
+}
+
+const {id} = Astro.params
+const title = String(id).replace(/-/g, " ") 
+---
+
+<Layout title={removeDash(id)} slug="faculties">
+  <FacultyBanner title={title} />
+  <!-- <div class="rts-section-padding">
+    <FunFact>
+      <Fragment slot="first-slot">
+        <h2>90%</h2>
+        <p>post-graduation success rate</p>
+      </Fragment>
+      <Fragment slot="second-slot">
+        <h2>Top 10</h2>
+        <p>Colleges that Create Futures</p>
+      </Fragment>
+      <Fragment slot="third-slot">
+        <h2>No. 1</h2>
+        <p>in the nation for materials R&D</p>
+      </Fragment>
+    </FunFact>
+  </div> -->
+  <Faculty slug = {id}  client:load/>
+</Layout>

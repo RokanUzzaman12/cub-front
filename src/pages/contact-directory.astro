@@ -1,0 +1,10 @@
+---
+import CommonBreadCrumb from "../components/common/CommonBreadCrumb.astro";
+import Contactdirectory from "../components/Contact-directory/Contactdirectory";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Contact Directory">
+  <CommonBreadCrumb title="Contact Directory" />
+  <Contactdirectory  client:load/>
+</Layout>

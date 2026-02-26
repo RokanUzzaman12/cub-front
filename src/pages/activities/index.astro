@@ -1,0 +1,10 @@
+---
+import CommonBreadCrumb from "../../components/common/CommonBreadCrumb.astro";
+import UniversityActivities from "../../components/Activities/UniversityActivities.jsx";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Activities" slug="activities">
+  <CommonBreadCrumb title="University Activities" />
+  <UniversityActivities  client:load />
+</Layout>

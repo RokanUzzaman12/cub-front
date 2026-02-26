@@ -1,0 +1,13 @@
+---
+export const prerender = false;
+
+import CommonBreadCrumb from "../../components/common/CommonBreadCrumb.astro";
+import ActivityDetails from "../../components/Activities/ActivityDetails.jsx"
+import Layout from "../../layouts/Layout.astro";
+const { id } = Astro.params;
+---
+
+<Layout>
+  <CommonBreadCrumb title="Activity Details" />
+  <ActivityDetails id={id} client:load />
+</Layout>

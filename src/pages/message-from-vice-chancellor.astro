@@ -1,0 +1,56 @@
+---
+import BreadCrumb from "../components/common/BreadCrumb";
+import Layout from "../layouts/Layout.astro";
+
+const ADMIN_DETAILS = {
+  dean_info: {
+    name: "Prof. DR. H M JAHIRUL HAQUE",
+    designation: "Vice Chancellor",
+    image:
+      "https://gallery.cub.ac.bd/var/albums/Web-Photos/CUB/Home/management/vc-sir.jpg?m=1685272696",
+    message: {
+      message_head: "It’s your Time Join to explore",
+      message_body:
+        "Our University exists for the sole purpose of transferring knowledge and experience from those of us who have it to those of us who need it. We make every effort to deliver practice based knowledge in ways that make it possible for us help each other solve our problems. This is the fundamental basis of our human existence. It is the fundamental challenge of our University. We are rewarded exclusively on the basis of how well we do this important work; how able we are to apply our cumulative knowledge and experience to solving humanities' most intractable problems, hunger, poverty, inequality and waste.",
+    },
+  },
+};
+---
+
+<Layout>
+  <div class="rts-campus-life mt--50">
+    <div class="container">
+      <div class="row">
+        <div class="campus-life">
+          <div class="text-center">
+            <h1 class="section-title">Message from vice chancellor</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="rts-faculty-details mb--50">
+    <div class="container">
+      <div class="row"></div>
+      <div class="row">
+        <div class="col-lg-12 col-md-12">
+          <div class="faculty-image text-center mb--10">
+            <img
+              src={ADMIN_DETAILS.dean_info.image}
+              alt="faculty image"
+              style="width: 200px; aspect-ratio: 1/1; border-radius: 50%; object-fit: cover;"
+            />
+            <div class="h5 mb-2 mt-5">Md. Hasanuzzaman</div>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div
+            class="faculty-content-text ms-lg-5 mt-5 mt-lg-0 text-center"
+            set:html={ADMIN_DETAILS.dean_info.message.message_body}
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

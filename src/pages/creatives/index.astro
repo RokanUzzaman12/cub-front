@@ -1,0 +1,11 @@
+---
+import CommonBreadCrumb from "../../components/common/CommonBreadCrumb.astro";
+import UniversityCreative from "../../components/Creatives/UniversityCreative.jsx";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Creatives" slug="creatives">
+  <CommonBreadCrumb title="Creatives" />
+
+  <UniversityCreative  client:load/>
+</Layout>

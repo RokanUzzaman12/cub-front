@@ -1,0 +1,12 @@
+---
+export const prerender = false;
+
+import CommonBreadCrumb from "../../components/common/CommonBreadCrumb.astro";
+import UniversityClubs from "../../components/Clubs/UniversityClubs.jsx";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Clubs" slug="clubs">
+  <CommonBreadCrumb title="University Clubs" />
+  <UniversityClubs client:load />
+</Layout>

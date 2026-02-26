@@ -1,0 +1,26 @@
+---
+import { fetchFaculties, fetchFacultyBySlug } from '../../../../api/faculties';
+import CommonBreadCrumb from '../../../../components/common/CommonBreadCrumb.astro';
+import DeansMessage from '../../../../components/Faculties/DeansMessage';
+import Layout from '../../../../layouts/Layout.astro';
+
+const {id} = Astro.params
+
+//single faculty
+const singlefaculty = await fetchFacultyBySlug(id);
+
+export async function getStaticPaths() {
+  const faculties = await fetchFaculties();
+  return faculties.data.map((faculty: { slug: string; }) => ({
+    params: { id: faculty.slug },
+  }));
+}
+
+---
+
+<Layout>
+  <CommonBreadCrumb title={`Message from ${singlefaculty.data.dean_title ?? 'Faculty'}`} />
+  <DeansMessage slug={id} client:load/>
+</Layout>
+
+

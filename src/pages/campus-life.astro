@@ -1,0 +1,140 @@
+---
+import FunFact from "../components/common/FunFact.astro";
+import Layout from "../layouts/Layout.astro";
+import CampusLifeSection from "../components/CampusLife/CampusLifeSection";
+---
+
+<Layout>
+  <!-- campus life -->
+  <div class="rts-campus-life pt--30 pb--30">
+    <div class="container">
+      <div class="row">
+        <div class="campus-life">
+          <div class="campus-life__content">
+            <h1 class="section-title">Campus Life</h1>
+            <p class="description w-680">
+              Our thriving residential campus is home to a community of creative
+              and accomplished people from around the world.
+            </p>
+            <div class="campus-video">
+              <img src="assets/images/campus/CUB_cumpus_image.jpeg" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- campus life end -->
+  <!-- <div class="rts-section-padding">
+    <FunFact>
+      <Fragment slot="first-slot">
+        <h2>90%</h2>
+        <p>post-graduation success rate</p>
+      </Fragment>
+      <Fragment slot="second-slot">
+        <h2>Top 10</h2>
+        <p>Colleges that Create Futures</p>
+      </Fragment>
+      <Fragment slot="third-slot">
+        <h2>No. 1</h2>
+        <p>in the nation for materials R&D</p>
+      </Fragment>
+    </FunFact>
+  </div> -->
+
+  <CampusLifeSection client:load/>
+</Layout>
+
+<style>
+  .campus-life__content {
+    text-align: center;
+  }
+  .campus-life__content .rts-section-title {
+    margin-bottom: 20px;
+  }
+  .campus-life__content .description {
+    font-size: 20px;
+  }
+  .campus-life__content .campus-video {
+    position: relative;
+    margin-top: 50px;
+  }
+  .campus-life__content .campus-video span {
+    display: none;
+  }
+  .campus-life__content .campus-video::before {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    content: "";
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.2);
+  }
+  .campus-life__content .campus-video .video-play {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    cursor: pointer;
+  }
+  .campus-life__content .campus-video .video-play img.round {
+    height: 126px;
+    width: 126px;
+    animation: rotate 10s linear infinite;
+    position: relative;
+  }
+  @media screen and (max-width: 992px) {
+    .campus-life__content .campus-video .video-play img.round {
+      height: 80px;
+      width: 80px;
+    }
+  }
+  .campus-life__content .campus-video .video-play img.play-icon {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  @media screen and (max-width: 992px) {
+    .campus-life__content .campus-video .video-play img.play-icon {
+      height: 30px;
+      width: 30px;
+    }
+  }
+
+  .single-item__content {
+    border: 1px solid #eee;
+    transition: var(--transition);
+  }
+  .single-item__content:hover {
+    border-color: var(--rt-primary-2);
+  }
+  .single-item__content .single-item__image {
+    overflow: hidden;
+  }
+  .single-item__content .single-item__image img {
+    transform: scale(1);
+    transition: var(--transition);
+  }
+  .single-item__content .single-item__image:hover img {
+    transform: scale(1.1);
+  }
+  .single-item__content .item-title {
+    margin-bottom: 10px;
+  }
+  .single-item__content .item-title a {
+    color: var(--rt-secondary);
+    transition: var(--transition);
+  }
+  .single-item__content .item-title a:hover {
+    color: var(--rt-primary-2);
+  }
+  .rts-campus-section.v_2 {
+    background: #f9f8ff;
+  }
+</style>

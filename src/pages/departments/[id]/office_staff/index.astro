@@ -1,0 +1,20 @@
+---
+import CommonBreadCrumb from "../../../../components/common/CommonBreadCrumb.astro";
+import Layout from "../../../../layouts/Layout.astro";
+import {fetchDepartments} from "../../../../api/departments"
+import { removeDash } from "../../../../lib/removeDash";
+import OfficeMembersList from "../../../../components/Departments/OfficeMemberList";
+const { id } = Astro.params;
+
+export async function getStaticPaths() {
+  const departments = await fetchDepartments();
+  return departments.data.map((dept: { slug: string; }) => ({
+    params: { id: dept.slug },
+  }));
+}
+---
+
+<Layout>
+  <CommonBreadCrumb title={removeDash(id)} />
+  <OfficeMembersList department={id}  client:load/>
+</Layout>

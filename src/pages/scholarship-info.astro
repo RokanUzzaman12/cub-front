@@ -1,0 +1,144 @@
+---
+import CommonBreadCrumb from "../components/common/CommonBreadCrumb.astro";
+import AvailableScholarships from "../components/Scholarship-info/AvailableScholarships.jsx";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <CommonBreadCrumb />
+
+  <!-- Scholarship content -->
+  <div class="rts-scholarship">
+    <div class="container">
+      <div class="rts-scholarship-description">
+        <div
+          class="row sticky-coloum-wrap justify-content-md-center justify-content-start"
+        >
+          <div class="col-lg-12 col-md-12">
+            <div class="program-description-area">
+              <div class="program-about">
+                <h4 class="title">
+                  Scholarship Opportunities at Canadian University
+                </h4>
+                <p>
+                  At Canadian University, we are committed to supporting
+                  academic excellence and ensuring that deserving students have
+                  access to quality education. Through a range of scholarship
+                  opportunities, we aim to recognize and reward outstanding
+                  achievements. Explore the various scholarships available:
+                </p>
+              </div>
+
+              <AvailableScholarships client:load/>
+            </div>
+          </div>
+          <!-- sidebar -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- program content end -->
+</Layout>
+<style>
+  .rts-scholarship-description .program-about {
+    margin-top: 40px;
+    margin-bottom: 50px;
+  }
+  .rts-scholarship-description .program-about .title {
+    margin-bottom: 10px;
+  }
+
+  .rts-scholarship-description .si {
+    margin-top: 40px;
+  }
+  .rts-scholarship-description .si .title {
+    max-width: 460px;
+  }
+  @media screen and (max-width: 992px) {
+    .rts-scholarship-description .si .title {
+      max-width: 100%;
+    }
+  }
+  .rts-scholarship-description .si__list ul {
+    margin: 0;
+    padding: 0;
+    column-count: 2;
+    column-gap: 30px;
+  }
+  @media screen and (max-width: 992px) {
+    .rts-scholarship-description .si__list ul {
+      column-count: 1;
+    }
+  }
+  .rts-scholarship-description .si__list ul li {
+    margin: 0;
+    position: relative;
+    margin-left: 30px;
+    font-size: 17px;
+    color: var(--rt-heading);
+    font-family: var(--font-secondary);
+    margin-bottom: 10px;
+  }
+  .rts-scholarship-description .si__list ul li::before {
+    position: absolute;
+    content: "";
+    background-image: url(../images/icon/arrow-rotate.svg);
+    height: 18px;
+    width: 14px;
+    left: -30px;
+    top: 5px;
+  }
+  .rts-scholarship-description .faq .title {
+    margin-bottom: 35px;
+  }
+  .rts-scholarship-description
+    .faq
+    .program-accordion
+    .accordion-button[aria-expanded="true"] {
+    background: var(--rt-primary);
+    color: var(--rt-white);
+    border-color: var(--rt-primary);
+  }
+  .rts-scholarship-description
+    .faq
+    .program-accordion
+    .accordion-button[aria-expanded="true"]::after {
+    border-color: var(--rt-white);
+  }
+  .rts-scholarship-description .scholarship-form .title {
+    margin-bottom: 20px;
+  }
+  .rts-scholarship-description .scholarship-form form.apply-form .single-input {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  @media screen and (max-width: 576px) {
+    .rts-scholarship-description
+      .scholarship-form
+      form.apply-form
+      .single-input {
+      flex-wrap: wrap;
+    }
+  }
+  .rts-scholarship-description
+    .scholarship-form
+    form.apply-form
+    .single-input
+    input,
+  .rts-scholarship-description
+    .scholarship-form
+    form.apply-form
+    .single-input
+    select {
+    border: 1px solid var(--rt-line);
+    padding: 13px 20px;
+    height: auto;
+  }
+  .rts-scholarship-description
+    .scholarship-form
+    form.apply-form
+    .rts-theme-btn {
+    max-width: 100%;
+  }
+</style>

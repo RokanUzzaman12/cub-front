@@ -1,0 +1,51 @@
+---
+import CommonBreadCrumb from "../components/common/CommonBreadCrumb.astro";
+import FunFact from "../components/common/FunFact.astro";
+import FacultyProgramsSection from "../components/Admission/FacultyProgramsSection";
+import Layout from "../layouts/Layout.astro";
+import CampusTour from "../components/common/CampusTour.astro";
+import CurrentSemester from "../components/Admission/CurrentSemester";
+import ProgramTutionFees from "../components/Admission/ProgramTutionFees";
+import ProgramEligibilities from "../components/Admission/ProgramEligibilites";
+---
+
+<Layout>
+  <!-- about university -->
+  <section class="rts-campus-life pt--30 pb--30">
+    <div class="container">
+      <div class="row">
+        <div class="campus-life">
+          <div class="campus-life__content">
+            <h1 class="section-title text-center">Admission</h1>
+            <p class="description w-680">
+              Explore the possibilities of a Candian University education.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- about university end -->
+  <!-- <FunFact>
+    <Fragment slot="first-slot">
+      <h2>90%</h2>
+      <p>post-graduation success rate</p>
+    </Fragment>
+    <Fragment slot="second-slot">
+      <h2>Top 10</h2>
+      <p>Colleges that Create Futures</p>
+    </Fragment>
+    <Fragment slot="third-slot">
+      <h2>No. 1</h2>
+      <p>in the nation for materials R&D</p>
+    </Fragment>
+  </FunFact> -->
+  <FacultyProgramsSection client:load/>
+  <ProgramEligibilities client:load />
+  <ProgramTutionFees client:load />
+  <CurrentSemester client:load />
+
+  <!-- <div class="rts-section-padding">
+    <CampusTour />
+  </div> -->
+</Layout>

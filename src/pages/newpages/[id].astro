@@ -1,0 +1,12 @@
+---
+export const prerender = false;
+
+import NewPageDetails from "../../components/NewPages/NewPageDetails.jsx";
+import Layout from "../../layouts/Layout.astro";
+
+const { id } = Astro.params;
+---
+
+<Layout>
+  <NewPageDetails id = {id}  client:load/>
+</Layout>

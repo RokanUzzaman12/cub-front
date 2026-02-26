@@ -1,0 +1,12 @@
+---
+export const prerender = false;
+
+import CreativeDetails from "../../components/Creatives/CreativeDetails.jsx";
+import Layout from "../../layouts/Layout.astro";
+
+const { id } = Astro.params;
+---
+
+<Layout>
+  <CreativeDetails id = {id}  client:load/>
+</Layout>

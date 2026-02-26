@@ -1,0 +1,12 @@
+---
+export const prerender = false;
+
+import NewsDetails from "../../components/News/NewsDetails.jsx";
+import Layout from "../../layouts/Layout.astro";
+
+const { id } = Astro.params;
+---
+
+<Layout title="News Details">
+  <NewsDetails id = {id}  client:load/>
+</Layout>

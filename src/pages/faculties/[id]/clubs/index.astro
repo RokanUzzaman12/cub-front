@@ -1,0 +1,20 @@
+---
+import UniversityClubs from "../../../../components/Clubs/UniversityClubs.jsx";
+import CommonBreadCrumb from "../../../../components/common/CommonBreadCrumb.astro";
+import Layout from "../../../../layouts/Layout.astro";
+import {fetchFaculties} from "../../../../api/faculties"
+import { removeDash } from "../../../../lib/removeDash";
+const { id } = Astro.params;
+
+export async function getStaticPaths() {
+  const faculties = await fetchFaculties();
+  return faculties.data.map((fac: { slug: string; }) => ({
+    params: { id: fac.slug },
+  }));
+}
+---
+
+<Layout>
+  <CommonBreadCrumb title={removeDash(id)} />
+  <UniversityClubs slug={id} facultyClub={true} client:load />
+</Layout>

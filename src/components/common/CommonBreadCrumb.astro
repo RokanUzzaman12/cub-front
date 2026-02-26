@@ -1,0 +1,169 @@
+---
+const { title } = Astro.props;
+const parentRoute = Astro.url.pathname.split("/")[1];
+---
+
+<section
+  class="rts-breadcrumb breadcrumb-height breadcumb-bg"
+  style="background: var(--rt-primary);"
+>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="breadcrumb-content">
+          <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">
+              {parentRoute}
+            </li>
+          </ul>
+          <h2 class="section-title">{title}</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .rts-breadcrumb.breadcrumb-bg {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .rts-breadcrumb > * {
+    position: relative;
+    z-index: 1;
+  }
+  .rts-breadcrumb .breadcrumb-content {
+    text-align: center;
+  }
+  .rts-breadcrumb .breadcrumb-content .breadcrumb {
+    color: var(--rt-white);
+    margin-bottom: 15px;
+    justify-content: center;
+  }
+  .rts-breadcrumb .breadcrumb-content .breadcrumb ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  .rts-breadcrumb .breadcrumb-content .breadcrumb li {
+    margin: 0;
+    padding: 0;
+  }
+  .rts-breadcrumb .breadcrumb-content .breadcrumb li a {
+    color: var(--rt-white);
+  }
+  .rts-breadcrumb
+    .breadcrumb-content
+    .breadcrumb-item
+    + .breadcrumb-item::before {
+    float: left;
+    padding-right: 10px;
+    padding-left: 10px;
+    color: #fff;
+    content: "\f054";
+    font-family: var(--fontawesome);
+    font-weight: 100;
+    font-size: 14px;
+  }
+  .rts-breadcrumb .breadcrumb-content .breadcrumb-item.active {
+    color: var(--rt-white);
+    text-transform: capitalize;
+  }
+  .rts-breadcrumb .breadcrumb-content .section-title {
+    color: var(--rt-white);
+  }
+
+  .breadcrumb-height-full .breadcrumb-content {
+    text-align: left;
+    padding-top: 450px;
+  }
+
+  @media screen and (max-width: 992px) {
+    .breadcrumb-height-full .breadcrumb-content {
+      padding-top: 0px;
+    }
+  }
+  .breadcrumb-height-full .breadcrumb-content .breadcrumb {
+    justify-content: left;
+  }
+  .breadcrumb-height-full {
+    height: 800px !important;
+  }
+  @media screen and (max-width: 992px) {
+    .breadcrumb-height-full {
+      height: 500px !important;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .breadcrumb-height-full {
+      height: 300px !important;
+    }
+  }
+  .rts-breadcrumb.breadcrumb-height {
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* border: 10px double red; */
+  }
+  .rts-breadcrumb.breadcrumb-height::before {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    content: "";
+    left: 0;
+    top: 0;
+    /* background: rgba(0, 0, 0, 0.5); */
+  }
+  @media screen and (max-width: 992px) {
+    .rts-breadcrumb.breadcrumb-height {
+      height: auto;
+      padding: 60px 0;
+    }
+  }
+  .rts-breadcrumb.breadcrumb-height {
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .rts-breadcrumb.breadcrumb-height::before {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    content: "";
+    left: 0;
+    top: 0;
+    /* background: rgba(0, 0, 0, 0.5); */
+  }
+  @media screen and (max-width: 992px) {
+    .rts-breadcrumb.breadcrumb-height {
+      height: auto;
+      padding: 60px 0;
+    }
+  }
+  .breadcrumb-height-full {
+    height: 800px !important;
+  }
+  @media screen and (max-width: 992px) {
+    .breadcrumb-height-full {
+      height: 500px !important;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .breadcrumb-height-full {
+      height: 300px !important;
+    }
+  }
+</style>

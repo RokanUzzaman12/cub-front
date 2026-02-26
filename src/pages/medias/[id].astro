@@ -1,0 +1,12 @@
+---
+export const prerender = false;
+
+import MediaDetails from "../../components/Medias/MediaDetails.jsx";
+import Layout from "../../layouts/Layout.astro";
+
+const { id } = Astro.params;
+---
+
+<Layout>
+  <MediaDetails id = {id}  client:load/>
+</Layout>

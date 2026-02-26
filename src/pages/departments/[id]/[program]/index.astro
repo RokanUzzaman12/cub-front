@@ -1,0 +1,21 @@
+---
+import { fetchPrograms } from "../../../../api/programs";
+import CommonBreadCrumb from "../../../../components/common/CommonBreadCrumb.astro";
+import ProgramDescription from "../../../../components/Departments/ProgramDescription.jsx";
+import Layout from "../../../../layouts/Layout.astro";
+import { removeDash } from "../../../../lib/removeDash";
+
+export async function getStaticPaths() {
+  const programs = await fetchPrograms();
+  return programs.data.map((program: { dept_id: string; slug: string; }) => ({
+    params: { id: program.dept_id, program: program.slug },
+  }));
+}
+
+const { program, id } = Astro.params;
+---
+
+<Layout>
+  <CommonBreadCrumb title={ removeDash(program) } />
+  <ProgramDescription slug = {program} client:load/>
+</Layout>

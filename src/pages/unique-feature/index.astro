@@ -1,0 +1,19 @@
+---
+import DepartmentUniqueFeature from "../../components/UniqueFeatures/DepartmentUniqueFeatures.jsx";
+import CommonBreadCrumb from "../../components/common/CommonBreadCrumb.astro";
+import Layout from "../../layouts/Layout.astro";
+import {fetchDepartments} from "../../api/departments"
+
+export async function getStaticPaths() {
+  const departments = await fetchDepartments();
+  return departments.data.map((dept: { slug: string; }) => ({
+    params: { id: dept.slug },
+  }));
+}
+---
+
+<Layout>
+  <CommonBreadCrumb title={"Department Unique Features"} />
+
+  <DepartmentUniqueFeature client:load />
+</Layout>

@@ -1,0 +1,12 @@
+---
+export const prerender = false;
+
+import CommonBreadCrumb from "../../components/common/CommonBreadCrumb.astro";
+import UniversityAlumni from "../../components/Alumni/UniversityAlumni";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Alumni" slug="alumni">
+  <CommonBreadCrumb title="University Alumni" />
+  <UniversityAlumni client:load />
+</Layout>

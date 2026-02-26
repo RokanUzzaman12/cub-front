@@ -1,0 +1,244 @@
+---
+import CommonBreadCrumb from "../components/common/CommonBreadCrumb.astro";
+import FacultyMembersList from "../components/common/FacultyMembersList";
+import Layout from "../layouts/Layout.astro";
+
+const FACULTIES = [
+  {
+    name: "Md. Hasanuzzaman",
+    image:
+      "https://gallery.cub.ac.bd/var/albums/Web-Photos/CUB/Home/administrative/IMG-20231009-WA0010%20%281%29.jpg?m=1696932236",
+    designation: "Chairman, Department of Computer Science and Engineering",
+  },
+  {
+    name: "Prof. Mustafa Hasan",
+    image:
+      "https://gallery.cub.ac.bd/var/albums/Web-Photos/CUB/Home/administrative/Untitled-1-01.jpg?m=1733823348",
+    designation:
+      "Associate Professor, Department of Computer Science and Engineering",
+  },
+  {
+    name: "Sayor Ajfar Aaron",
+    image:
+      "https://gallery.cub.ac.bd/var/albums/Web-Photos/CUB/Home/administrative/muktadir.JPG?m=1696931042",
+    designation: "Lecturer, Department of Computer Science and Engineering",
+  },
+  {
+    name: "Sakib Bin Asad",
+    image:
+      "https://gallery.cub.ac.bd/var/albums/Web-Photos/CUB/Home/administrative/shuvra.JPG?m=1696507007",
+    designation:
+      "Adjunct Faculty, Department of Computer Science and Engineering",
+  },
+  {
+    name: "Ayesha Binte Mostofa",
+    image:
+      "https://gallery.cub.ac.bd/var/albums/Web-Photos/CUB/Home/administrative/Eti%20Moni.jpg?m=1732162185",
+    designation: "Lecturer, Department of Computer Science and Engineering",
+  },
+  {
+    name: "Tanjina Oriana",
+    image:
+      "https://gallery.cub.ac.bd/var/albums/Web-Photos/CUB/Home/administrative/imtiaz.jpg?m=1731403253",
+    designation: "Lecturer, Department of Computer Science and Engineering",
+  },
+  {
+    name: "K. M. Safin Kamal",
+    image:
+      "https://gallery.cub.ac.bd/var/albums/Web-Photos/CUB/Home/administrative/Abu-Shayed%20%281%29.png?m=1731845070",
+    designation: "Lecturer, Department of Computer Science and Engineering",
+  },
+];
+---
+
+<Layout>
+  <CommonBreadCrumb title="Registar Office" />
+  <!-- faculty directory -->
+  <section class="rts-faculty rts-section-padding">
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col-lg-12 col-md-11">
+          <div class="rts-section mb--50">
+            <h3 class="rts-section-title">Register Office Members</h3>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-md-center g-5">
+        <!-- single staff item -->
+
+        {
+          FACULTIES.map((faculty) => (
+            <div class="col-lg-6 col-md-11">
+              <div class="single-staff">
+                <div class="single-staff__content">
+                  <div class="staf-image">
+                    <img src={faculty.image} alt="staff-image" />
+                  </div>
+                  <div class="staf-info">
+                    <h5 class="name">{faculty.name}</h5>
+                    <span class="designation">{faculty.designation}</span>
+                    <div class="staf-info__social">
+                      <a href="#">
+                        <i class="fa-brands fa-facebook-f" />
+                      </a>
+                      <a href="#">
+                        <i class="fa-brands fa-linkedin-in" />
+                      </a>
+                      <a href="#">
+                        <i class="fa-brands fa-medium" />
+                      </a>
+                      <a href="#">
+                        <i class="fa-brands fa-youtube" />
+                      </a>
+                    </div>
+                    <a href="mailto:jenni@Unipixuni.edu" class="email-contact">
+                      <span>
+                        <i class="fa-light fa-envelope" />
+                      </span>
+                      jenni@Unipixuni.edu
+                    </a>
+                    <a href="calltto:121" class="phone-contact">
+                      <span>
+                        <i class="fa-light fa-phone" />
+                      </span>
+                      +1 2245 1247 241
+                    </a>
+                    <div class="staf-info__speciality">
+                      <p>Hospitality, Tourism, Event Management and Esports</p>
+                    </div>
+                    <a
+                      href="/departments/1/faculty-staff/1"
+                      class="rts-theme-btn border-btn"
+                    >
+                      More Details
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+      <!-- <div class="rts-load-more-btn rt-center mt--60">
+        <a
+          href="/departments/1/faculty-staff/1"
+          class="rts-theme-btn primary lh-100">Load More</a
+        >
+      </div> -->
+    </div>
+  </section>
+  <!-- faculty directory end -->
+</Layout>
+
+<style>
+  .single-staff {
+    border: 1px solid var(--rt-line);
+    padding: 20px;
+    transition: var(--transition);
+    box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+  }
+  .single-staff__content {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+  }
+  @media screen and (max-width: 1200px) {
+    .single-staff__content {
+      flex-wrap: wrap;
+    }
+  }
+  @media screen and (max-width: 992px) {
+    .single-staff__content {
+      flex-wrap: nowrap;
+    }
+  }
+  @media screen and (max-width: 576px) {
+    .single-staff__content {
+      flex-wrap: wrap;
+    }
+  }
+  .single-staff__content .staf-image {
+    width: auto;
+  }
+  @media screen and (max-width: 992px) {
+    .single-staff__content .staf-image {
+      width: auto;
+    }
+  }
+  @media screen and (max-width: 576px) {
+    .single-staff__content .staf-image {
+      width: auto;
+    }
+  }
+  .single-staff__content .staf-image img {
+    min-width: 200px;
+    width: 200px;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+    border-radius: 50%;
+    border: 1px solid black;
+  }
+  @media screen and (max-width: 1200px) {
+    .single-staff__content .staf-image img {
+      min-width: 200px;
+      width: 200px;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      /* object-position: top; */
+    }
+  }
+  @media screen and (max-width: 576px) {
+    .single-staff__content .staf-image img {
+      min-width: 200px;
+      width: 200px;
+      aspect-ratio: 1/1;
+    }
+  }
+  .single-staff__content .staf-info .name {
+    margin-bottom: 5px;
+  }
+  .single-staff__content .staf-info .designation {
+    display: block;
+    margin-bottom: 15px;
+  }
+  .single-staff__content .staf-info__social {
+    margin-bottom: 15px;
+    display: flex;
+    gap: 10px;
+  }
+  .single-staff__content .staf-info__social i {
+    font-size: 16px;
+    color: var(--rt-body);
+    transition: var(--transition);
+  }
+  .single-staff__content .staf-info__social i:hover {
+    color: var(--rt-primary-2);
+  }
+  .single-staff__content .staf-info .email-contact,
+  .single-staff__content .staf-info .phone-contact {
+    display: block;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .single-staff__content .staf-info .email-contact span,
+  .single-staff__content .staf-info .phone-contact span {
+    color: var(--rt-primary);
+  }
+  .single-staff__content .staf-info .phone-contact {
+    margin-bottom: 0;
+  }
+  .single-staff__content .staf-info__speciality {
+    margin-top: 25px;
+    border-left: 2px solid var(--rt-primary-2);
+    margin-bottom: 30px;
+  }
+  .single-staff__content .staf-info__speciality p {
+    margin-left: 15px;
+  }
+  .single-staff:hover {
+    /* border-color: var(--rt-primary-2); */
+    box-shadow: none;
+  }
+</style>

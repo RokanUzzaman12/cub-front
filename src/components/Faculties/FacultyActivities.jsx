@@ -1,0 +1,136 @@
+import React from "react";
+
+const FacultyActivities = ({ facultyActivities, slug }) => {
+  return (
+    <>
+      {!facultyActivities || facultyActivities.length === 0 ? null : (
+      <div className="rts-blog v_3 rts-section-padding">
+        <div className="container">
+          <div className="row">
+            <div className="rts__section--wrapper">
+              <h2 className="rts-section-title">Activities and Updates</h2>
+              <div className="rts__section--link">
+                <a
+                  href={`/faculties/${slug}/activities`}
+                  className="rts-nbg-btn btn-arrow"
+                >
+                  Find All
+                  <span>
+                    <i className="fa-sharp fa-regular fa-arrow-right"></i>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="row justify-content-md-start justify-content-sm-center g-5">
+            {!facultyActivities || facultyActivities.length === 0 ? (
+              <div className="col-12">
+                <div
+                  className="rts-empty-state text-center"
+                  style={{
+                    padding: 40,
+                    border: "1px solid var(--rt-line)",
+                    borderRadius: 6,
+                  }}
+                >
+                  <h4>No faculty activities found</h4>
+                  <h6>There are currently no activities for this faculty.</h6>
+                </div>
+              </div>
+            ) : (
+              facultyActivities.slice(0, 4).map((item) => (
+                <div
+                  className="col-sm-10 col-md-6 col-lg-6 col-xl-4"
+                  key={item.id}
+                >
+                  <div className="single-blog">
+                    <div className="blog single-blog__content">
+                      <div className="blog__thumb">
+                        <a href={`/activities/${item.id}`}>
+                          <img src={item.image} alt="blog thumbnail" />
+                        </a>
+                      </div>
+                      <div className="blog__meta">
+                        <div className="blog__meta--da">
+                          <div className="blog-date">
+                            <span>
+                              <i className="fal fa-calendar"></i>
+                            </span>
+                            <span>{item.date}</span>
+                          </div>
+                          <div className="blog-author">
+                            <span>
+                              <i className="far fa-user"></i>
+                            </span>
+                            <span>
+                              <a href="#">{item.author || "Unknown"}</a>
+                            </span>
+                          </div>
+                        </div>
+                        <h5 className="blog__title">
+                          <a href={`/activities/${item.id}`}>{item.title}</a>
+                        </h5>
+                        <a
+                          href={`/activities/${item.id}`}
+                          className="rts-theme-btn primary with-arrow lh-100"
+                        >
+                          Read More{" "}
+                          <span>
+                            <i className="fa-thin fa-arrow-right"></i>
+                          </span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))
+            )}
+          </div>
+        </div>
+      </div>
+      )}
+
+      <style>{`
+        .rts-blog.v_3 .single-blog {
+          border: 1px solid var(--rt-line);
+          box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.05);
+          transition: var(--transition);
+          overflow: hidden;
+        }
+        .rts-blog.v_3 .single-blog__content .blog__thumb {
+          overflow: hidden;
+        }
+        .rts-blog.v_3 .single-blog__content .blog__thumb img {
+          width: 100%;
+          object-fit: cover;
+          transition: var(--transition);
+          transform: scale(1);
+        }
+        .rts-blog.v_3 .single-blog__content .blog__thumb img:hover {
+          transform: scale(1.05);
+        }
+        .rts-blog.v_3 .single-blog__content .blog__meta {
+          padding: 25px;
+        }
+        .rts-blog.v_3 .single-blog__content .blog__meta--da {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          margin-bottom: 20px;
+          flex-wrap: wrap;
+        }
+        .rts-blog.v_3 .single-blog__content .blog__meta--da .blog-date,
+        .rts-blog.v_3 .single-blog__content .blog__meta--da .blog-author {
+          display: flex;
+          gap: 8px;
+        }
+        .rts-blog.v_3 .single-blog__content .blog__meta--da .blog-date span i,
+        .rts-blog.v_3 .single-blog__content .blog__meta--da .blog-author span i {
+          color: var(--rt-primary-1);
+        }
+      `}</style>
+    </>
+  );
+};
+
+export default FacultyActivities;

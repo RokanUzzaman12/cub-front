@@ -1,0 +1,13 @@
+---
+export const prerender = false;
+
+import CommonBreadCrumb from "../../components/common/CommonBreadCrumb.astro";
+import ResearchDetails from "../../components/Research/ResearchDetails.jsx"
+import Layout from "../../layouts/Layout.astro";
+const { id } = Astro.params;
+---
+
+<Layout>
+  <CommonBreadCrumb title="Research & Publication Details" />
+  <ResearchDetails id={id} client:load />
+</Layout>

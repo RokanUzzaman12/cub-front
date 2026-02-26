@@ -1,0 +1,20 @@
+---
+import AvailableJobs from "../../../components/Careers/AvailableJobs";
+import CommonBreadCrumb from "../../../components/common/CommonBreadCrumb.astro";
+import Layout from "../../../layouts/Layout.astro";
+import {fetchDepartments} from "../../../api/departments"
+import { removeDash } from "../../../lib/removeDash";
+const { deptSlug } = Astro.params;
+
+export async function getStaticPaths() {
+  const departments = await fetchDepartments();
+  return departments.data.map((dept: { slug: string; }) => ({
+    params: { deptSlug: dept.slug },
+  }));
+}
+---
+
+<Layout title={removeDash(deptSlug)} slug="careers">
+  <CommonBreadCrumb title={removeDash(deptSlug)} />
+  <AvailableJobs departmentSlug={deptSlug} client:load />
+</Layout>

@@ -1,0 +1,10 @@
+---
+import CommonBreadCrumb from "../../components/common/CommonBreadCrumb.astro";
+import UniversityNewsletter from "../../components/Newsletter/UniversityNewsletter";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Newsletter" slug="newsletter">
+  <CommonBreadCrumb title="University Newsletter" />
+  <UniversityNewsletter client:load />
+</Layout>

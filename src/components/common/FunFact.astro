@@ -1,0 +1,115 @@
+<div class="rts-funfact">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="rts-funfact-wrapper">
+          <div class="single-cta-item">
+            <slot name="first-slot" />
+          </div>
+          <div class="single-cta-item">
+            <slot name="second-slot" />
+          </div>
+          <div class="single-cta-item">
+            <slot name="third-slot" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .rts-funfact-wrapper {
+    /* background: var(--rt-primary); */
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+
+    border-style: double;
+    border-color: var(--rt-primary);
+    border-width: 10px 0;
+  }
+  @media screen and (max-width: 992px) {
+    .rts-funfact-wrapper {
+      padding: 30px 60px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .rts-funfact-wrapper {
+      padding: 40px;
+    }
+  }
+  @media screen and (min-width: 575px) and (max-width: 685px) {
+    .rts-funfact-wrapper {
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 40px;
+    }
+  }
+  @media screen and (max-width: 576px) {
+    .rts-funfact-wrapper {
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 40px;
+    }
+  }
+  .rts-funfact-wrapper .single-cta-item {
+    max-width: 160px;
+    position: relative;
+  }
+  .rts-funfact-wrapper .single-cta-item:not(:last-child):after {
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    background: #af2944;
+    content: "";
+    top: 0;
+    right: -70px;
+  }
+  @media screen and (max-width: 1200px) {
+    .rts-funfact-wrapper .single-cta-item:not(:last-child):after {
+      right: -40px;
+    }
+  }
+  @media screen and (max-width: 992px) {
+    .rts-funfact-wrapper .single-cta-item:not(:last-child):after {
+      right: -15px;
+    }
+  }
+  @media screen and (min-width: 850px) and (max-width: 991px) {
+    .rts-funfact-wrapper .single-cta-item:not(:last-child):after {
+      right: -40px;
+    }
+  }
+  @media screen and (min-width: 992px) and (max-width: 1075px) {
+    .rts-funfact-wrapper .single-cta-item:not(:last-child):after {
+      right: -30px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .rts-funfact-wrapper .single-cta-item:not(:last-child):after {
+      right: -20px;
+    }
+  }
+  @media screen and (min-width: 575px) and (max-width: 685px) {
+    .rts-funfact-wrapper .single-cta-item:not(:last-child):after {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 576px) {
+    .rts-funfact-wrapper .single-cta-item:not(:last-child):after {
+      display: none;
+    }
+  }
+
+  .rts-funfact.stroke .single-cta-item h2 {
+    font-family: var(--font-primary);
+    font-weight: 700;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-color: #dedede;
+    -webkit-text-stroke: 1px;
+    font-size: 40px;
+  }
+</style>
+
+<style is:inline></style>

@@ -1,0 +1,273 @@
+---
+import { Image } from "astro:assets";
+---
+
+<!-- about us -->
+<section class="about v__2 rts-section-padding">
+  <div class="container">
+    <div class="row justify-content-md-center g-5 align-items-center">
+      <div class="col-lg-6 col-md-9">
+        <div class="about__left--content">
+          <div class="about_section">
+            <div style="text-align: center;width: 100%;">
+              <img
+                src="/assets/images/about/chairman.png"
+                width="600"
+                height="500"
+                alt="Chairman"
+                 style="display:block; margin:0 auto;"
+              />
+              <h4 class="pt--20">Chowdhury Jafarullah Sharafat </h4>
+              <h6 style="line-height: 5px;">Chairman(acting) & Board of Trustiees</h6>
+              <h6 style="line-height: 5px;">Canadian University of Bangladesh </h6>
+              <h6 style="line-height: 5px;">Eminent Sports Commentator at Television & Radio</h6>
+            </div>
+          </div>
+          <!-- <div class="about__left--content--left">
+            <Image
+              width={300}
+              height={600}
+              src="https://gallery.cub.ac.bd/var/albums/Web-Photos/CUB/Home/career_Job_placement/1_3_50.jpg?m=1694497993"
+              alt=""
+            />
+          </div> -->
+          <!-- <div class="about__left--content--center">
+            <div class="rts__circle v__1">
+              <svg class="spinner" viewBox="0 0 100 100">
+                <defs>
+                  <path
+                    id="circle"
+                    d="M50,50 m-37,0a37,37 0 1,1 74,0a37,37 0 1,1 -74,0"></path>
+                </defs>
+                <text>
+                  <textPath xlink:href="#circle">
+                    Canadian University*Estd. 2016*Explore Future*
+                  </textPath>
+                </text>
+              </svg>
+              <div class="rts__circle--icon">
+                <i class="fa-light fa-arrow-right"></i>
+              </div>
+            </div>
+          </div> -->
+          <!-- src="https://placehold.co/600x400/890C25/FFFFFF/png?text=B" -->
+
+          <!-- <div class="about__left--content--right">
+            <Image
+              width={300}
+              height={600}
+              src="https://gallery.cub.ac.bd/var/albums/Web-Photos/CUB/Home/news/Campus%20Image.jpg?m=1707822682"
+              alt=""
+            />
+          </div> -->
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-9">
+        <div class="about__right--content">
+          <div class="about__right--content--sub">
+            <img src="assets/images/icon/e-cap-pix.svg" alt="cap" />
+            Inspiring applied knowledge
+          </div>
+          <h2 class="about__right--content--title">
+            Message from the Chairman <span style={{fontSize: "18px;"}}>(Acting)</span>
+          </h2>
+          <!-- <h2 class="about__right--content--title">About University</h2>
+          <p class="about__right--content--description">
+            The Canadian University of Bangladesh (CUB) is a premier higher
+            education institution committed to academic excellence, innovation,
+            and global standards. With a focus on practical learning,
+            research-driven education, and industry-oriented programs, CUB
+            prepares students to thrive in an ever-evolving world. Our modern
+            campus, distinguished faculty, and strong international
+            collaborations provide students with a dynamic and supportive
+            learning environment. Whether in business, engineering, media, or
+            technology, CUB empowers students with the skills, knowledge, and
+            confidence to lead and succeed. Join us and embark on a journey of
+            academic brilliance and career success.
+          </p> -->
+          <p class="about__right--content--description">
+            Welcome to Canadian University of Bangladesh (CUB)! Established in
+            2016 under the Private Universities Act of 2010, CUB is approved by
+            the Ministry of Education, Government of Bangladesh, and the
+            University Grants Commission (UGC). Our university has achieved
+            (UGC). remarkable success in a short time, providing quality
+            education and fostering academic progress. Our vision is to become a
+            leading international university, promoting Canadian perspectives in
+            learning, research and application while respecting ng diverse
+            cultures and Bangladeshi values. Join us in our mission to achieve
+            excellence through education, research, and community services.
+            Explore our beautiful campus and facilities, engage in
+            extra-curricular activities to develop your leadership skills, and
+            we wish you success in your learning and future career.
+          </p>
+          <!-- <div class="about__right--content--vision">
+            <div class="mision">
+              <div class="mision__icon">
+                <img src="assets/images/icon/mission.svg" alt="" />
+              </div>
+              <div class="mision__title">University Mission Statement</div>
+            </div>
+            <div class="vision">
+              <div class="vision__icon">
+                <img src="assets/images/icon/vission.svg" alt="" />
+              </div>
+              <div class="vision__title">University Vision Achievement</div>
+            </div>
+          </div> -->
+          <a href="/about" class="rts-theme-btn btn-arrow"
+            >About Our University
+            <span><i class="fa-regular fa-arrow-right"></i></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- about us end -->
+
+<style>
+  /* ======== About CSS ======= */
+  .about__images--wrapper {
+    position: relative;
+    display: flex;
+    margin-bottom: 75px;
+  }
+  @media screen and (max-width: 1200px) {
+    .about__images--wrapper {
+      margin-bottom: 0;
+    }
+  }
+  .about__images--wrapper--left {
+    width: 100%;
+  }
+  @media screen and (max-width: 992px) {
+    .about__images--wrapper--left img {
+      width: 100%;
+      height: 550px;
+      object-fit: cover;
+    }
+  }
+  @media screen and (max-width: 992px) {
+    .about__images--wrapper--left img {
+      margin-bottom: 30px;
+    }
+  }
+  .about__images--wrapper--center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9;
+  }
+  .about__left--content--left img,
+  .about__left--content--right img {
+    height: 600px;
+    width: auto;
+    object-fit: cover;
+    display: block;
+  }
+  @media screen and (max-width: 1200px) {
+    .about__left--content--left img,
+    .about__left--content--right img {
+      height: 600px;
+    }
+  }
+  .about__images--wrapper--right {
+    position: absolute;
+    bottom: -75px;
+    border-left: 20px solid var(--rt-white);
+    border-top: 20px solid var(--rt-white);
+    right: 45px;
+  }
+  @media screen and (max-width: 1200px) {
+    .about__images--wrapper--right {
+      display: none;
+    }
+  }
+  .about__content {
+    margin-left: 20px;
+  }
+  @media screen and (max-width: 992px) {
+    .about__content {
+      margin-left: 0;
+    }
+  }
+  .about__content .rts__title {
+    max-width: 465px;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+  }
+  @media screen and (max-width: 992px) {
+    .about__content .rts__title {
+      max-width: 100%;
+    }
+  }
+  .about__content .stroke__text {
+    margin: 80px 0;
+  }
+  @media screen and (max-width: 1200px) {
+    .about__content .stroke__text {
+      margin: 40px 0;
+    }
+  }
+  .about.v__2 .about__left--content {
+    /* padding-right: 40px; */
+    position: relative;
+    display: flex;
+    gap: 30px;
+  }
+  .about.v__2 .about__left--content--left {
+    margin-top: 40px;
+  }
+  .about.v__2 .about__left--content--center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .about.v__2 .about__right--content--sub {
+    color: var(--rt-primary-2);
+    display: flex;
+    gap: 10px;
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-family: var(--font-primary);
+    font-weight: 500;
+  }
+  .about.v__2 .about__right--content--title {
+    margin-bottom: 30px;
+  }
+  .about.v__2 .about__right--content--vision {
+    margin-bottom: 50px;
+    margin-top: 30px;
+    display: flex;
+    gap: 30px;
+  }
+  @media screen and (max-width: 1200px) {
+    .about.v__2 .about__right--content--vision {
+      flex-wrap: wrap;
+    }
+  }
+  .about.v__2 .about__right--content--vision .mision,
+  .about.v__2 .about__right--content--vision .vision {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    border: 1px solid var(--rt-primary-2);
+    padding: 13px 26px;
+    background: var(--light-white);
+  }
+  .about.v__2 .about__right--content--vision .mision__icon,
+  .about.v__2 .about__right--content--vision .vision__icon {
+    min-width: 50px;
+    height: 50px;
+  }
+  .about.v__2 .about__right--content--vision .mision__title,
+  .about.v__2 .about__right--content--vision .vision__title {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--rt-primary-2);
+    font-family: var(--font-primary);
+  }
+</style>

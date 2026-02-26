@@ -1,0 +1,10 @@
+---
+import CommonBreadCrumb from "../../components/common/CommonBreadCrumb.astro";
+import UniversityNotices from "../../components/Notices/UniversityNotices.jsx";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout slug="notices" title="Notices">
+  <CommonBreadCrumb title="Important Notices" />
+  <UniversityNotices  client:load/>
+</Layout>

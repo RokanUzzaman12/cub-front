@@ -1,0 +1,11 @@
+---
+import CommonBreadCrumb from "../../components/common/CommonBreadCrumb.astro";
+import UniversityNewPages from "../../components/NewPages/UniversityNewPage.jsx";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout>
+  <CommonBreadCrumb title="New Pages" />
+
+  <UniversityNewPages  client:load/>
+</Layout>

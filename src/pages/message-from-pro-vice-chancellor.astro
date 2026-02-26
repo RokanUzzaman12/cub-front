@@ -1,0 +1,54 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const ADMIN_DETAILS = {
+  dean_info: {
+    name: "Prof. DR. H M JAHIRUL HAQUE",
+    designation: "Vice Chancellor",
+    image:
+      "https://gallery.cub.ac.bd/var/albums/Web-Photos/CUB/Home/management/1587965022711.jpg?m=1724302587",
+    message: {
+      message_head: "",
+      message_body: "",
+    },
+  },
+};
+---
+
+<Layout>
+  <div class="rts-campus-life mt--50">
+    <div class="container">
+      <div class="row">
+        <div class="campus-life">
+          <div class="text-center">
+            <h1 class="section-title">Message from pro vice chancellor</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="rts-faculty-details mb--50">
+    <div class="container">
+      <div class="row"></div>
+      <div class="row">
+        <div class="col-lg-12 col-md-12">
+          <div class="faculty-image text-center mb--10">
+            <img
+              src={ADMIN_DETAILS.dean_info.image}
+              alt="faculty image"
+              style="width: 200px; aspect-ratio: 1/1; border-radius: 50%; object-fit: cover;"
+            />
+            <div class="h5 mb-2 mt-5">Md. Hasanuzzaman</div>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div
+            class="faculty-content-text ms-lg-5 mt-5 mt-lg-0 text-center"
+            set:html={ADMIN_DETAILS.dean_info.message.message_body}
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,24 @@
+---
+import HeadMessage from "../../../../components/Departments/HeadMessage.jsx";
+import { fetchDepartments, fetchDepartmentBySlug } from "../../../../api/departments";
+import Layout from "../../../../layouts/Layout.astro";
+import CommonBreadCrumb from "../../../../components/common/CommonBreadCrumb.astro";
+
+const {id} = Astro.params
+
+//single department
+const singledepartment = await fetchDepartmentBySlug(id);
+
+export async function getStaticPaths() {
+  const departments = await fetchDepartments();
+  return departments.data.map((dept: { slug: string; }) => ({
+    params: { id: dept.slug },
+  }));
+}
+
+---
+
+<Layout>
+  <CommonBreadCrumb title={`Message from ${singledepartment.data.dean_title ?? 'Department'}`} />
+  <HeadMessage slug = {id}  client:load/>
+</Layout>

@@ -1,0 +1,23 @@
+---
+import HeaderBanner from "../components/HomePage/HeaderBanner";
+import AboutUsSection from "../components/HomePage/AboutUsSection.astro";
+import CampusLife from "../components/HomePage/CampusLife";
+import Layout from "../layouts/Layout.astro";
+import Programs from "../components/HomePage/Programs";
+import EventNoticeSection from "../components/common/EventNoticeSection";
+import Brands from "../components/HomePage/Brands";
+import News from "../components/HomePage/News";
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout>
+  <HeaderBanner client:only="react" />
+  <AboutUsSection />
+  <Programs client:load/>
+  <News  client:load/>
+  <EventNoticeSection slug='' facultyEventNotice= {false} departmentEventNotice={false} client:load/>
+  <CampusLife  client:load/>
+  <Brands client:load/>
+</Layout>

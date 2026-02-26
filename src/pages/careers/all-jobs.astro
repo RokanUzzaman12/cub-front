@@ -1,0 +1,10 @@
+---
+import CommonBreadCrumb from "../../components/common/CommonBreadCrumb.astro";
+import AvailableJobList from "../../components/Careers/AvailableJobs";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout>
+  <CommonBreadCrumb title="Available Jobs" />
+  <AvailableJobList client:load />
+</Layout>

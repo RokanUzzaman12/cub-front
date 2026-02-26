@@ -1,0 +1,21 @@
+---
+import CommonBreadCrumb from "../../components/common/CommonBreadCrumb.astro";
+import Layout from "../../layouts/Layout.astro";
+import { removeDash } from "../../lib/removeDash";
+import { fetchMessages } from "../../api/messages";
+import { slugify } from "../../lib/slugify";
+import Messages from "../../components/Messages/Messages";
+const {messageType} = Astro.params
+
+export async function getStaticPaths() {
+  const messages = await fetchMessages();
+  return messages.data.map((message: { title: string; }) => ({
+    params: { messageType: slugify(message.title)  },
+  }));
+}
+---
+
+<Layout title={removeDash(messageType)} slug="messages">
+  <CommonBreadCrumb title={removeDash(messageType)}  />
+  <Messages messageType={messageType} client:load/>
+</Layout>

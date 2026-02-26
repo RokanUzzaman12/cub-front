@@ -1,0 +1,21 @@
+---
+import { fetchLeaderCategories } from "../../api/leaders";
+import { fetchProgramsTypes } from "../../api/programs";
+import CommonBreadCrumb from "../../components/common/CommonBreadCrumb.astro";
+import AuthorityList from "../../components/Authorities/AuthorityList";
+import Layout from "../../layouts/Layout.astro";
+import { removeDash } from "../../lib/removeDash";
+const {authorityType} = Astro.params
+
+export async function getStaticPaths() {
+  const leaderTypes = await fetchLeaderCategories();
+  return leaderTypes.data.map((leaderType: { slug: string; }) => ({
+    params: { authorityType: leaderType.slug },
+  }));
+}
+---
+
+<Layout>
+  <CommonBreadCrumb title={removeDash(authorityType)} />
+  <AuthorityList leaderType={authorityType} client:load/>
+</Layout>

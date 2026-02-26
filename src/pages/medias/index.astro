@@ -1,0 +1,11 @@
+---
+import CommonBreadCrumb from "../../components/common/CommonBreadCrumb.astro";
+import UniversityMedia from "../../components/Medias/UniversityMedia.jsx";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Medias" slug="medias">
+  <CommonBreadCrumb title="Medias" />
+
+  <UniversityMedia  client:load/>
+</Layout>

@@ -1,0 +1,10 @@
+---
+import CommonBreadCrumb from "../../components/common/CommonBreadCrumb.astro";
+import UniversityCareers from "../../components/Careers/UniversityCareers";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Careers" slug="careers">
+  <CommonBreadCrumb title="University Careers" />
+  <UniversityCareers client:load />
+</Layout>

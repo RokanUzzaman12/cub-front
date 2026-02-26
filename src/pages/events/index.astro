@@ -1,0 +1,10 @@
+---
+import CommonBreadCrumb from "../../components/common/CommonBreadCrumb.astro";
+import UniversityEvents from "../../components/Events/UniversityEvents.jsx";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Events" slug="events">
+  <CommonBreadCrumb title="Events" />
+  <UniversityEvents client:load/>
+</Layout>

@@ -1,0 +1,21 @@
+---
+import { fetchCategories } from "../../../api/categories";
+import CommonBreadCrumb from "../../../components/common/CommonBreadCrumb.astro";
+import FacultyMembersList from "../../../components/common/FacultyMembersList";
+import Layout from "../../../layouts/Layout.astro";
+import { removeDash } from "../../../lib/removeDash";
+const { type } = Astro.params;
+
+export async function getStaticPaths() {
+  const categories = await fetchCategories();
+  return categories.data.map((category: { slug: string; }) => ({
+    params: { type: category.slug },
+  }));
+}
+---
+
+<Layout>
+  <CommonBreadCrumb title={removeDash(type)} />
+
+  <FacultyMembersList staffType={type}  client:load/>
+</Layout>
