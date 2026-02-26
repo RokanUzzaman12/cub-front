@@ -5,7 +5,17 @@ export async function fetchSeo() {
   return await apiFetch("/seo-configs");
 }
 
-//fetch single seo
 export async function fetchSeoBySlug(slug) {
-  return await apiFetch(`/seo-by-slug/${slug}`);
+  try {
+    const res = await apiFetch(`/seo-by-slug/${slug}`);
+
+    if (res?.success) {
+      return res.data;
+    }
+
+    return null;
+  } catch (error) {
+    console.error("SEO fetch error:", error);
+    return null;
+  }
 }

@@ -4,18 +4,21 @@ import { Image } from "astro:assets";
 import { fetchSeoBySlug } from "../api/seoConfigs.js";
 
 const { title, slug } = Astro.props;
-console.log(slug);
+
 
 let seores = null;
 
+console.log('slug',slug);
+
 try {
    seores = await fetchSeoBySlug(slug);
+   console.log(seores)
    
  } catch (error) {
    console.log("SEO fetch failed", error);
  }
- let seo = seores?.data ?? null;
- console.log(seo);
+ let seo = seores ?? null;
+
 
 const isHomePage = Astro.url.pathname === "/";
 
